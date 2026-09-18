@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/favicon (2).ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulários</title>
+</head>
+<body>
+    <header>
+        <h1>Elementos de formulários</h1>
+        <p>Continuação com demonstração da <a href="index.html">página de estudos.</a></p>
+        <p>Elementos usados para criar formulários, onde o usuário pode digitar, escolher ou enviar informações.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Glossário</h2>
+            <ul>
+                <li><code>&lt;form&gt;</code>: elemento com controles interativos que serve para pegar informações do usuário. Pode enviar os dados via <code><b>method="get"</b></code> (dados visíveis na URL, usado para buscas) ou <code><b>method="post"</b></code> (dados no corpo da requisição, usado para cadastros, login e ações que alteram algo no servidor).</li>
+                <li><code>&lt;label&gt;</code>: legenda para um item da interface. Usamos junto com o atributo <code>for</code> — quando o <code>for</code> tem o mesmo valor do <code>id</code> do campo, eles se relacionam, facilitando o clique e a acessibilidade para o usuário.</li>
+                <li><code>&lt;button&gt;</code>: adiciona um botão clicável.</li>
+                <li><code>&lt;fieldset&gt;</code>: agrupa elementos relacionados de um formulário, geralmente com uma borda visual ao redor.</li>
+                <li><code>&lt;legend&gt;</code>: título do grupo criado pelo <code>fieldset</code>; aparece encaixado na borda superior dele.</li>
+                <li><code>&lt;select&gt;</code>: cria uma lista suspensa (dropdown) onde o usuário escolhe uma opção entre várias.</li>
+                <li><code>&lt;option&gt;</code>: cada opção disponível dentro do <code>select</code>.</li>
+                <li><code>&lt;textarea&gt;</code>: cria uma caixa de texto com várias linhas, usada para textos mais longos, como comentários ou mensagens.</li>
+                <li><code>autofocus</code>: faz o campo já começar selecionado (com o cursor pronto para digitar) assim que a página carrega, sem o usuário precisar clicar nele.</li>
+                <li><code>&lt;input&gt;</code>: usado para criar os controles interativos; o comportamento depende do valor do atributo <code>type</code>. Tendo também os complementos:</li>
+                    <ul>
+                        <li><code>&lt;name&gt;</code>: identifica o campo quando os dados são enviados ao servidor.</li>
+                        <li><code>&lt;id&gt;</code>: identifica o campo dentro da página, usado para ligar com o <code>for</code> do <code>label</code>.</li>
+                        <li><code>&lt;value&gt;</code>: define o valor inicial (ou o valor enviado, em checkbox/radio).</li>
+                        <li><code>&lt;required&gt;</code>: torna o preenchimento do campo obrigatório antes de enviar o formulário.</li>
+                        <li><code>&lt;min&gt;</code> e <code>&lt;max&gt;</code>: definem o valor mínimo e máximo aceito em campos.</li>
+                        <li><code>&lt;placeholder&gt;</code>: texto de exemplo/dica exibido dentro do campo quando ele está vazio; não é enviado ao servidor.</li>
+                    </ul>
+            </ul>
+        </section>
+        <section>
+            <h2>Exemplo de formulário de Login</h2>
+            <p>Abaixo veremos a demonstração de como um formulário de login básico ficaria, utilizando os elementos do glossário.</p>
+            <form  method="post" action="https://professores.unisanta.br/sobrino/scripts/mostra-v2.php">
+                <fieldset>
+                    <div><label for="iusu">Usuário:</label>
+                         <input type="text" name="usu" id="iusu" minlength="4" maxlength="15" placeholder="Mínimo 4 dígitos" required></div>
+                    <div><label for="isenha">Senha:</label>
+                        <input type="password" name="senha" id="isenha" minlength="8" maxlength="20" placeholder="Minímo 8 dígitos" required></div>
+                </fieldset>
+            </form>
+            
+               <details>
+               <summary>Código exemplo:</summary>
+                <div>
+                    <pre><code>&lt;form method="post" action="Seguir o link (ctrl + clique)"&gt;
+                        &lt;div&gt;
+                        &lt;label for="iusu"&gt;Usuário:&lt;/label&gt;
+                        &lt;input
+                            type="text"
+                            name="usu"
+                            id="iusu"
+                            minlength="4"
+                            maxlength="15"
+                            placeholder="Mínimo 4 dígitos"
+                            required
+                        &gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label for="isenha"&gt;Senha:&lt;/label&gt;
+                        &lt;input
+                            type="password"
+                            name="senha"
+                            id="isenha"
+                            minlength="8"
+                            maxlength="20"
+                            placeholder="Mínimo 8 dígitos"
+                            required
+                        &gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;</code></pre>
+                </div>
+               </details>
+        </section>
+        <section>
+            <h2>Exemplo de formulário de contato</h2>
+            <p>O formulário de contato segue a mesma lógica de login, e visualmente fica deste modo:</p>
+            <form method="post" action="Seguir o link (ctrl + clique)">
+                <fieldset>
+                    <legend>Dados para contato</legend>
+                    <div><label for="imail">E-mail:</label>
+                    <input type="email" name="email" id="imail" placeholder="email@provedor.com.br" required>
+                    </div>
+                    <div><label for="iphone">Telefone:</label>
+                    <input type="tel" name="telefone" id="iphone" placeholder="(00) 00000-0000" required>
+                    </div>
+                </fieldset>
+            </form>
+            <details>
+                <summary>Código exemplo</summary>
+                <div>
+                    <pre><code>&lt;form method="post" action="Seguir o link (ctrl + clique)"&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Dados para contato&lt;/legend&gt;
+                        &lt;div&gt;
+                            &lt;label for="imail"&gt;E-mail:&lt;/label&gt;
+                            &lt;input
+                                type="email"
+                                name="email"
+                                id="imail"
+                                placeholder="email@provedor.com.br"
+                                required
+                            &gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;label for="iphone"&gt;Telefone:&lt;/label&gt;
+                            &lt;input
+                                type="tel"
+                                name="telefone"
+                                id="iphone"
+                                placeholder="(00) 00000-0000"
+                                required
+                            &gt;
+                        &lt;/div&gt;
+                    &lt;/fieldset&gt;
+                    &lt;/form&gt;</code></pre>
+                </div>
+            </details>
+        </section>
+        
+        <section>
+            <h2>Exemplo de Checkbox e Radio</h2>
+            <p>Checkbox e radio são tipos de input usados para marcar opções em vez de digitar texto. O checkbox permite escolher uma ou várias opções ao mesmo tempo, enquanto o radio permite escolher apenas uma entre várias alternativas do mesmo grupo.</p>
+            
+            <form method="post" action="https://professores.unisanta.br/sobrino/scripts/mostra-v2.php">
+            <fieldset class="chk">
+                <legend>Interesses</legend>
+                <input type="checkbox" name="html" id="ihtml"><label for="ihtml" class="linha">Html</label>
+                <input type="checkbox" name="css" id="icss"><label for="icss" class="linha">CSS</label>
+                <input type="checkbox" name="js" id="ijs"><label for="ijs" class="linha">Javascript</label>
+                <input type="checkbox" name="php" id="iphp"><label for="iphp" class="linha">Php</label>
+            </fieldset>
+            <fieldset class="radio">
+                <legend>Está gostando do site?</legend>
+                <input type="radio" name="resp" value="sim" id="isim" required><label for="isim" class="linha">Sim!</label>
+                <input type="radio" name="resp" value="demais" id="idemais" required><label for="idemais" class="linha">Demais</label>
+            
+            </fieldset>
+            </form>
+            
+            <p><b>Adendo:</b>O radio permite escolher apenas uma alternativa desde que todas as opções do radio compartilhem o mesmo nome, o que faz o navegador entender que pertencem ao mesmo conjunto.</p>
+            
+            <details>
+            <summary>Código exemplo:</summary>
+            
+            <div>
+                <pre><code>&lt;form method="post" action=""&gt;
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Interesses&lt;/legend&gt;
+            
+                        &lt;input type="checkbox" name="html" id="ihtml"&gt;
+                        &lt;label for="ihtml"&gt;Html&lt;/label&gt;
+            
+                        &lt;input type="checkbox" name="css" id="icss"&gt;
+                        &lt;label for="icss"&gt;CSS&lt;/label&gt;
+            
+                        &lt;input type="checkbox" name="js" id="ijs"&gt;
+                        &lt;label for="ijs"&gt;Javascript&lt;/label&gt;
+            
+                        &lt;input type="checkbox" name="php" id="iphp"&gt;
+                        &lt;label for="iphp"&gt;Php&lt;/label&gt;
+                    &lt;/fieldset&gt;
+            
+                    &lt;fieldset&gt;
+                        &lt;legend&gt;Está gostando do site?&lt;/legend&gt;
+            
+                        &lt;input type="radio" name="resp" value="sim" id="isim" required&gt;
+                        &lt;label for="isim"&gt;Sim!&lt;/label&gt;
+            
+                        &lt;input type="radio" name="resp" value="demais" id="idemais" required&gt;
+                        &lt;label for="idemais"&gt;Demais&lt;/label&gt;
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;</code></pre>
+            </div>
+            </details>
+        </section>
+        
+        <section>
+            <h2>Exemplo de seleção</h2>
+            <p><p>Nesta seção estão os elementos usados para criar seleções em formulários, formando uma lista suspensa onde o usuário escolhe uma opção sem precisar digitar.</p></p>
+            
+            <form method="post" action="https://professores.unisanta.br/sobrino/scripts/mostra-v2.php">
+            
+                <label for="iselect" class="linha">Sistema operacional</label>
+                <select name="so" id="iso" required>
+                <option value="">Escolha...</option>
+                <option value="windows">Windows</option>
+                <option value="Mac">MacOS</option>
+                <option value="Linux">Linux</option>
+                </select>
+            
+            </form>
+            
+            <details>
+            <summary>Código exemplo</summary>
+            <div>
+                <pre><code>&lt;form method="post" action=""&gt;
+            &lt;label for="iselect"&gt;Sistema operacional&lt;/label&gt;
+            &lt;select name="so" id="iso" required&gt;
+                &lt;option value=""&gt;Escolha...&lt;/option&gt;
+                &lt;option value="windows"&gt;Windows&lt;/option&gt;
+                &lt;option value="Mac"&gt;MacOS&lt;/option&gt;
+                &lt;option value="Linux"&gt;Linux&lt;/option&gt;
+            &lt;/select&gt;
+            
+            &lt;/form&gt;</code></pre>
+            </div>
+            </details>
+            
+            <h2>Exemplo de text area</h2>
+            <p>A text area é onde o usuário pode enviar algo escrito para o site.</p>
+            
+            <label for="msg">Mensagem:</label>
+            <textarea name="msg" id="imsg" rows="10" cols="30"></textarea>
+            <div><input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar">
+            </div>
+            
+            <details>
+            <summary>Código exemplo</summary>
+            <div>
+                <pre><code>&lt;label for="msg"&gt;Mensagem:&lt;/label&gt;
+            &lt;br&gt;
+            &lt;textarea name="msg" id="imsg" rows="10" cols="30"&gt;&lt;/textarea&gt;
+            &lt;div&gt;
+                &lt;input type="submit" value="Enviar"&gt;
+                &lt;input type="reset" value="Limpar"&gt;
+            &lt;/div&gt;</code></pre>
+            </div>
+            </details>
+        </section>
+    </main>
+    
+</body>
+</html>

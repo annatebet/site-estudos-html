@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/favicon (1).ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Estudos</title>
+</head>
+<body>
+    <header>
+        <h1>Site para estudos de HTML e CSS</h1>
+        <p>Este site reúne resumos, conceitos e exemplos sobre <b>HTML e CSS</b>, organizados de forma simples e prática. O objetivo é facilitar a revisão dos principais conteúdos e servir como material de apoio para os estudos sobre desenvolvimento web.</p>
+    </header>
+
+    <main>
+        <h2>O que é HTML?</h2>
+        <p> <strong>HTML (HyperText Markup Language)</strong> é uma linguagem de marcação (tags) utilizada no desenvolvimento Front-End de sites. Ele é responsável por criar e organizar a estrutura e o conteúdo das páginas, como títulos, textos, imagens, links, listas e formulários.
+        </p>
+        <section>
+            <h3>Glossário do <b>HTML</b></h3>
+            <ul>
+                <li>Tags estruturais:</li>
+                <ul>
+                    <li><code>&lt;head&gt;</code>: onde ficam as informações do site, como título, configurações e links para outros arquivos.</li>
+                    <li><code>&lt;body&gt;</code>: onde fica todo o conteúdo que aparece na página. Só pode existir um <code>&lt;body&gt;</code> em cada documento.</li>
+                    <li><code>&lt;h1&gt;</code> até <code>&lt;h6&gt;</code>: são os títulos da página. <code>&lt;h1&gt;</code> é o título principal e <code>&lt;h6&gt;</code> é o menor nível de título.</li>
+                    <li><code>&lt;h1&gt;</code> até <code>&lt;h6&gt;</code>: são os títulos da página. <code>&lt;h1&gt;</code> é o título principal e <code>&lt;h6&gt;</code> é o menor nível de título.</li>
+                    <li><code>&lt;p&gt;</code>: cria um parágrafo de texto.</li>
+                    <li><code>&lt;br&gt;</code>: faz uma quebra de linha.</li>
+                    <li><code>&lt;img&gt;</code>: adiciona uma imagem à página.</li>
+                    <li><code>&lt;a&gt;</code>: elemento âncora, cria um link (via atributo <code>href</code>) que leva a outro endereço. Usamos <code><b>target="_blank"</b></code> para o link abrir em outra aba, e <code><b>rel</b></code> para dar significado ao que o link fará depois de aberto.</li>
+                    <li><code>&lt;div&gt;</code>: caixa genérica de bloco, sem significado próprio. Serve para agrupar outros elementos e organizar o layout, geralmente junto com uma classe CSS.</li>
+                    <li><code>&lt;table&gt;</code>: cria uma tabela, usada para organizar dados em linhas e colunas.</li>
+                    <li><code>&lt;td&gt;</code>: célula de dado dentro de uma linha da tabela.</li>
+                    <li><code>&lt;th&gt;</code>: célula de cabeçalho da tabela; geralmente aparece em negrito e centralizada, indicando o título de uma coluna ou linha.</li>
+                    <li><code>&lt;address&gt;</code>: indica informações de contato do autor ou responsável pela página (como e-mail, endereço, telefone); o texto costuma aparecer em itálico por padrão.</li>
+                    <li><code>&lt;details&gt;</code>: cria um bloco de conteúdo que fica escondido por padrão e aparece quando o usuário clica.</li>
+                    <li><code>&lt;summary&gt;</code>: título/resumo do <code>details</code>, é a parte sempre visível em que o usuário clica para mostrar ou esconder o resto do conteúdo.</li>
+                    </ul>
+        </section>
+                
+        <section>
+            <ul>
+                    <li>Tags de formatação de texto:</li>
+                    <ul>
+                        <li><code>&lt;b&gt;</code> — deixa o texto <b>em negrito</b> (só visual)</li>
+                        <li><code>&lt;i&gt;</code> — deixa o texto <i>em itálico</i> (só visual)</li>
+                        <li><code>&lt;u&gt;</code> — deixa o texto <u>sublinhado</u> (só visual)</li>
+                        <li><code>&lt;strong&gt;</code> — também fica <strong>em negrito</strong>, mas
+                        indica que o conteúdo é importante</li>
+                    </ul>
+                            </ul>
+        </section>
+
+        <section>
+            <h2>O que é CSS?</h2>
+            <p><b>CSS (Cascading Style Sheets)</b> é a linguagem usada para estilizar páginas HTML: cores, fontes, espaçamento, tamanhos, posicionamento e outros aspectos visuais, separando a aparência da estrutura do conteúdo.</p>
+
+            <ul>
+                <li><code>padding</code>: espaço interno entre o conteúdo do elemento e sua borda.</li>
+                <li><code>margin</code>: margem, espaço externo entre o elemento e o que está ao redor dele.</li>
+                <li><code>border</code>: borda, a linha ao redor do elemento (pode definir espessura, estilo e cor).</li>
+                <li><code>box-sizing</code>: define como a largura/altura do elemento é calculada; com <code>border-box</code>, padding e borda entram dentro da largura definida, em vez de somados por fora.</li>
+                <li><code>background-color</code>: cor de fundo do elemento.</li>
+                <li><code>color</code>: cor das letras/texto.</li>
+                <li><code>font-family</code>: define a fonte usada no texto.</li>
+                <li><code>font-weight</code>: grossura da fonte (normal, bold, ou valores numéricos como 400, 700).</li>
+                <li><code>rem</code>: unidade de medida relativa ao tamanho de fonte definido no elemento raiz (<code>html</code>), útil para manter proporção em toda a página.</li>
+                <li><code>text-align</code>: alinha o texto dentro do elemento (esquerda, direita, centro, justificado).</li>
+                <li><code>display</code>: define como o elemento se comporta no layout (bloco, inline, flex, grid, etc).</li>
+                <li><code>flex</code>: valor de <code>display</code> que transforma o elemento em um container flexível, organizando os filhos em linha ou coluna.</li>
+                <li><code>flex-direction</code>: define a direção dos itens dentro de um container flex (linha ou coluna).</li>
+                <li><code>gap</code>: espaço entre os itens dentro de um container flex ou grid.</li>
+                <li><code>hover</code>: pseudo-classe que aplica um estilo quando o mouse está passando por cima do elemento (sem precisar clicar).</li>
+                <li><code>width</code>: define a largura do elemento.</li>
+                <li><code>font-size</code>: define o tamanho da fonte do texto.</li>
+                <li><code>border-radius</code>: arredonda os cantos da borda do elemento.</li>
+                <li><code>border-color</code>: define a cor da borda do elemento.</li>
+                <li><code>cursor</code>: define o formato do cursor do mouse ao passar sobre o elemento (ex: <code>pointer</code> para indicar que é clicável).</li>
+                <li><code>margin-block</code>: define a margem no eixo vertical (topo e base) de uma vez só.</li>
+                <li><code>resize</code>: controla se o usuário pode redimensionar o elemento (usado principalmente em <code>textarea</code>); <code>none</code> desativa esse redimensionamento.</li>
+
+                
+            </ul>
+        </section>
+        <section>
+            <h3>Glossário sobre formulários em HTML</h3>
+            <p>Para facilitar o entendimento, há uma outra página se aprofundando em marcações em sites funcionais com demonstrações visuais. <a href="pag002.html">Clique aqui para acessa-la</a></p>
+        </section>
+        <section>
+            <h2>Refêrencias para estudos</h2>
+            <p> Ao longo de aulas, aprendemos a criar alguns modelos básicos de site, no qual podemos utilizar seu código fonte como material de estudo.</p>
+            <ul>
+                <li><a href="file:///E:/Downloads/Aula-1/Aula-1/index.html" target="_blank">Site de informações</a></li>
+                <li><a href="file:///E:/Downloads/Aula-2/Aula-2/login.html" target="_blank">Site simulando Login</a></li>
+                <li><a href="file:///E:/Downloads/Aula-2/Aula-2/contato.html" target="_blank">Site para preenchimento</a></li>
+            </ul>
+        </section>
+    </main>
+    
+</body>
+</html>
